@@ -39,13 +39,13 @@ class _DashboardPageState extends State<DashboardPage> {
                      }));
                    },
                      child: Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                        elevation: 10,
                        child: Padding(
                          padding: EdgeInsets.only(bottom: 15,top: 15),
                          child: Container(
-                           height: _hight * .17,
-                           width: _width * .37,
+                           height: _hight * .15,
+                           width: _width * .35,
                            child: Column(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children:  [
@@ -66,13 +66,13 @@ class _DashboardPageState extends State<DashboardPage> {
                      // }));
                    },
                      child: Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                        elevation: 10,
                        child: Padding(
                          padding: EdgeInsets.only(bottom: 15,top: 15),
                          child: Container(
-                           height: _hight * .17,
-                           width: _width * .37,
+                           height: _hight * .15,
+                           width: _width * .35,
                            child: Column(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children:  [
@@ -101,13 +101,13 @@ class _DashboardPageState extends State<DashboardPage> {
                      }));
                    },
                      child: Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                        elevation: 10,
                        child: Padding(
                          padding: EdgeInsets.only(bottom: 15,top: 15),
                          child: Container(
-                           height: _hight * .17,
-                           width: _width * .37,
+                           height: _hight * .15,
+                           width: _width * .35,
                            child: Column(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children:  [
@@ -128,13 +128,13 @@ class _DashboardPageState extends State<DashboardPage> {
                      // }));
                    },
                      child: Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                        elevation: 10,
                        child: Padding(
                          padding: EdgeInsets.only(bottom: 15,top: 15),
                          child: Container(
-                           height: _hight * .17,
-                           width: _width * .37,
+                           height: _hight * .15,
+                           width: _width * .35,
                            child: Column(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children:  [
