@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../DashboardPages/QiblaPage/QiblaScreen.dart';
 import '../DashboardPages/QuranPage/SurahScreen.dart';
 import 'Drawer.dart';
 
@@ -95,9 +96,9 @@ class _DashboardPageState extends State<DashboardPage> {
                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                  children: [
                    InkWell(onTap: () {
-                     // Navigator.push(context, MaterialPageRoute(builder: (context){
-                     //   return  SearchScreen();
-                     // }));
+                     Navigator.push(context, MaterialPageRoute(builder: (context){
+                       return  QiblaScreen();
+                     }));
                    },
                      child: Card(
                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),

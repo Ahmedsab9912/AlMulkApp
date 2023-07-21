@@ -29,30 +29,77 @@ class _SurahPageState extends State<SurahPage> {
         appBar: AppBar(
           title: Text('All Surah'),
         ),
-        body: surahModel == null
-            ? Center(
-                child: CircularProgressIndicator(),)
-            : ListView.builder(
-          //  shrinkWrap IS ALTERNATE WIDGET OF EXPANDED
+        body: Column(
+          children: [
+            // Padding(
+            //   padding: EdgeInsets.all(8.0),
+            //   child: TextFormField(
+            //     // Add your desired properties for the TextFormField
+            //     decoration: InputDecoration(
+            //       labelText: 'Search Surah',
+            //       border: OutlineInputBorder(),
+            //     ),
+            //   ),
+            // ),
+            Expanded(
+              child: surahModel == null
+                  ? Center(
+                child: CircularProgressIndicator(),
+              )
+                  : ListView.builder(
                 shrinkWrap: true,
                 itemCount: surahModel!.data!.length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return AllSurahPage(datax: surahModel!.data![index] ,);
-                      }));
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                            return AllSurahPage(
+                              datax: surahModel!.data![index],
+                            );
+                          }));
                     },
                     child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 10),
                       child: Card(
+                        margin: EdgeInsets.only(top: 3),
                         elevation: 3,
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
-                          child: Text(
-                            surahModel!.data![index].name.toString(),
-                            style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),textDirection: TextDirection.rtl,
+                          child: Row(
+                            mainAxisAlignment:
+                            MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                surahModel!.data![index]
+                                    .englishName
+                                    .toString(),
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green[900],
+                                ),
+                                textDirection: TextDirection.rtl,
+                              ),
+                              Center(
+                                child: Image.asset(
+                                  'images/Line.png',
+                                  height: 38,
+                                  width: 55,
+                                ),
+                              ),
+                              Text(
+                                surahModel!.data![index]
+                                    .name
+                                    .toString(),
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textDirection: TextDirection.rtl,
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -60,6 +107,9 @@ class _SurahPageState extends State<SurahPage> {
                   );
                 },
               ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -67,7 +117,7 @@ class _SurahPageState extends State<SurahPage> {
   //API CALLING
   Future<SurahModel?> getQuranData() async {
     var response =
-        await http.get(Uri.parse('http://api.alquran.cloud/v1/surah'));
+    await http.get(Uri.parse('http://api.alquran.cloud/v1/surah'));
     var dataz = jsonDecode(response.body.toString());
     if (response.statusCode == 200) {
       setState(() {
